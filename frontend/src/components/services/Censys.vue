@@ -57,7 +57,13 @@ export default defineComponent({
 
       if (props.fingerprint.certificate) {
         q.push({
-          key: "Certificate",
+          key: "Certificate Search",
+          query: props.fingerprint.certificate.sha256,
+          link: createSearchLink(props.fingerprint.certificate.sha256)
+        })
+
+        q.push({
+          key: "Certificate Details",
           query: props.fingerprint.certificate.sha256,
           link: createCertificatesLink(props.fingerprint.certificate.sha256)
         })
